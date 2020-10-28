@@ -2,7 +2,7 @@
 SED="/bin/sed"
 
 #SELinux
-${SED} -i s/SELINUX=enforcing/SELINUX=disabled/ /etc/selinux/config
+sudo ${SED} -i s/SELINUX=enforcing/SELINUX=disabled/ /etc/selinux/config
 
 #Disable firewalld
 sudo systemctl stop firewalld
@@ -23,3 +23,6 @@ sudo mv www.conf /etc/opt/rh/rh-php72/php-fpm.d/www.conf
 #enable nginx php
 sudo systemctl enable rh-php72-php-fpm.service nginx
 sudo systemctl restart rh-php72-php-fpm.service nginx
+
+#reboot
+sudo reboot
