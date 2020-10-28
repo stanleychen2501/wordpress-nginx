@@ -1,0 +1,7 @@
+#!/bin/bash
+sudo yum install -y nginx wget psmisc.x86_64 util-linux.i686 centos-release-scl.noarch 
+sudo yum -y install rh-php72 rh-php72-php rh-php72-php-fpm rh-php72-php*
+wget https://tw.wordpress.org/wordpress-5.2.3-zh_TW.tar.gz
+tar zxf wordpress-5.2.3-zh_TW.tar.gz -C /usr/share/nginx/
+sudo mv nginx.conf /etc/nginx/
+sudo mv www.conf /etc/opt/rh/rh-php72/php-fpm.d/www.conf
